@@ -1,4 +1,4 @@
-# Fail2ban Configuration
+# Fail2ban custom jail configuration to protect SSH from bruteforce login attempts
 
 This document provides instructions for configuring Fail2ban in ubuntu to protect SSH from bruteforce login attempts using a simple custom jail configuration.
 
