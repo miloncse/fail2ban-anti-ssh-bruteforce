@@ -17,9 +17,7 @@ This document provides instructions for configuring Fail2ban in ubuntu server to
     logpath = /var/log/auth.log  
     maxretry = 1  
     banaction = iptables-multiport  
-#### `maxentry = 1` indicates a single failed login attempt should be considered for ban, increase the value if you want or you can white list your ip or multiple ips from this policy,
-#### to white list a single or multiple ip's do follwing:
-   `[DEFAULT]`  
+#### `maxentry = 1` indicates a single failed login attempt should be considered for ban, increase the value if you want or you can white list your ip or multiple ips from this policy,The iptables-multiport ban action is particularly useful when you want to block access to multiple ports simultaneously by using this we are telling Fail2ban to block IP address from accessing multiple ports associated with SSH. Now to white list a single or multiple ip's from this jail do follwing:
    `ignoreip = 192.168.0.1 10.0.0.2 172.16.0.0/24`  
 #### In the example above, three IP addresses are whitelisted: 192.168.0.1, 10.0.0.2, and the entire subnet 172.16.0.0/24. If you want to whitelist a single ip then just keep that single ip as ignoreip value  
 #### Now Open the SSH filter configuration file:
