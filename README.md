@@ -1,2 +1,2 @@
 # fail2ban-anti-ssh-bruteforce
-Fail2ban custom jail rules &amp; filters to prevent  brute force login attempts/attacks on sshd - Ubuntu server
+The fail2ban.md document provides instructions for configuring Fail2ban in ubuntu server to keep SSH password login enabled and protect server from bruteforce login attempts using simple custom jail configuration.
