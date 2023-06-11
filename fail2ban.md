@@ -17,7 +17,7 @@ This document provides instructions for configuring Fail2ban in ubuntu server to
     logpath = /var/log/auth.log  
     maxretry = 1  
     banaction = iptables-multiport  
-#### `maxentry = 1` indicates a single failed login attempt should be considered for ban, increase the value if you want or you can white list your ip or multiple ips from this policy,The iptables-multiport ban action is particularly useful when you want to block access to multiple ports simultaneously by using this we are telling Fail2ban to block IP address from accessing multiple ports associated with SSH. Now to white list a single or multiple ip's from this jail do follwing:
+#### `maxentry = 1` indicates a single failed login attempt should be considered for ban, increase the value if you want or you can white list your ip or multiple ips from this policy,The iptables-multiport ban action is particularly useful when you want to block access to multiple ports simultaneously by using this we are telling Fail2ban to block IP address from accessing multiple ports associated with SSH. Now to white list a single or multiple IP adresses from this jail do follwing:
    `ignoreip = 192.168.0.1 10.0.0.2 172.16.0.0/24`  
 #### In the example above, three IP addresses are whitelisted: 192.168.0.1, 10.0.0.2, and the entire subnet 172.16.0.0/24. If you want to whitelist a single ip then just keep that single ip as ignoreip value  
 #### Now Open the SSH filter configuration file:
@@ -32,8 +32,9 @@ This document provides instructions for configuring Fail2ban in ubuntu server to
     sudo fail2ban-client status sshd
 #### To unban a specific ip address put following:
     sudo fail2ban-client set sshd unbanip BANNED_IP_ADDRESS
-#### To unban all the ip's blocked by Fail2ban put following: 
+#### To unban all the IP addresses blocked by Fail2ban put following: 
     sudo fail2ban-client set sshd unban --all
 #### Please note that clearing the jail will remove all the banned IP addresses for that specific jail. Use this command cautiously, as it will revoke all the active bans, and the previously banned IP addresses will no longer be blocked by Fail2ban.
-
+#### To view whitelisted IP addresses you can run follwing:
+   `sudo fail2ban-client get sshd ignoreip`  
 ##### Thank you! :)
