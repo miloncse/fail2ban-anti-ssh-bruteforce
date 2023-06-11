@@ -31,7 +31,7 @@ This document provides instructions for configuring Fail2ban in ubuntu server to
 
 #### Add the following failregex pattern under [Definition] section (the section should already be there if not add it), also if the failregex already exits comment it or replace it by following, this regex will prevent any invalid user or wrong password/public key ssh login attempts:
 
-`failregex = Failed (?:password|publickey) for (?:invalid user \S+ |)root from <HOST> port \d+`
+`failregex = ^(?:Invalid user \S+ from <HOST> port \d+|Failed password (?:for invalid user \S+|root)?from <HOST> port \d+|Authentication failure for \S+: publickey from <HOST> port \d+)`
 
 #### Restart the Fail2ban service to apply the changes and check if everything ok, you should see fail2ban running after above modificatoins:
 
