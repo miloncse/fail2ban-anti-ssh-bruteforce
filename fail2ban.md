@@ -32,4 +32,8 @@ This document provides instructions for configuring Fail2ban in ubuntu server to
     sudo fail2ban-client status sshd
 #### To unban a specific ip address put following:
     sudo fail2ban-client set sshd unbanip BANNED_IP_ADDRESS
+#### To unban all the ip's blocked by Fail2ban put following: 
+    sudo fail2ban-client set sshd unban --all
+#### Please note that clearing the jail will remove all the banned IP addresses for that specific jail. Use this command cautiously, as it will revoke all the active bans, and the previously banned IP addresses will no longer be blocked by Fail2ban.
+
 ##### Thank you! :)
