@@ -17,12 +17,11 @@ This document provides instructions for configuring Fail2ban in ubuntu server to
     logpath = /var/log/auth.log  
     maxretry = 1  
     banaction = iptables-multiport  
-    ban = YOUR_WHITE_LISTED_IP  
 #### `maxentry = 1` indicates a single failed login attempt should be considered for ban, increase the value if you want or you can white list your ip or multiple ips from this policy,
-#### `ban = YOUR_WHITE_LISTED_IP` replace your own public ip with YOUR_WHITE_LISTED_IP or to white list multiple ip's do follwing:
+#### to white list a single or multiple ip's do follwing:
    `[DEFAULT]`  
    `ignoreip = 192.168.0.1 10.0.0.2 172.16.0.0/24`  
-#### In the example above, three IP addresses are whitelisted: 192.168.0.1, 10.0.0.2, and the entire subnet 172.16.0.0/24.  
+#### In the example above, three IP addresses are whitelisted: 192.168.0.1, 10.0.0.2, and the entire subnet 172.16.0.0/24. If you want to whitelist a single ip then just keep that single ip as ignoreip value  
 #### Now Open the SSH filter configuration file:
     sudo nano /etc/fail2ban/filter.d/sshd.conf
 #### Locate [Definition] section (the section should already be there if not add it), Add the following failregex pattern: 
