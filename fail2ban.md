@@ -1,6 +1,6 @@
 # Fail2ban custom jail configuration to protect SSH from bruteforce login attempts
 
-This document provides instructions for configuring Fail2ban in ubuntu server to protect SSH from bruteforce login attempts using a simple custom jail configuration.
+This document provides instructions for configuring Fail2ban in ubuntu server to keep SSH password/public key login enabled and protect server from bruteforce login attempts using simple custom jail configuration.
 
 #### Update the package index:
 
